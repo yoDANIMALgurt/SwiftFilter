@@ -1,0 +1,29 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: QuaratineSpam-TastelessEmojis
+Description: Quarantine messages where subject line contains emoji(s) determined to be tacky and/or inappropriate for business email communications. Businesses related to groceries or produce are more susceptible to false-positives.
+
+Rules:
+- Subject header matches the following patterns: <SET0>
+
+Exceptions:
+- if sender's domain is quarantine.messaging.microsoft.com
+
+Actions:
+- Set audit severity level to 'Low'
+- Deliver to quarantine
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <TEXT> ==
+
+\ud83c\udf3d
+\ud83c\udf46
+\ud83c\udf4c
+\ud83c\udf51
+\ud83d\udd95
+\ud83e\udd52
+\ud83e\udd56
+
+== SET0 - END <TEXT> ==
